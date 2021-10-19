@@ -1,0 +1,27 @@
+<h2>Por país</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <form (ngSubmit)="buscar()">
+      <input
+        type="text"
+        placeholder="Ingrese el país..."
+        name="termino"
+        class="form-control"
+        [(ngModel)]="termino"
+      />
+    </form>
+  </div>
+</div>
+
+<br />
+<div *ngIf="mostrarError" class="alert alert-danger">
+  {{ msjError }}
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+  <div class="col">
+    <app-table-pais [paises]="paises"></app-table-pais>
+  </div>
+</div>
