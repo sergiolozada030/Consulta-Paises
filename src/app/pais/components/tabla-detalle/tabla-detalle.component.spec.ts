@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TablePaisComponent } from './table-pais.component';
+import { TablaDetalleComponent } from './tabla-detalle.component';
 
-describe('TablePaisComponent', () => {
-  let component: TablePaisComponent;
-  let fixture: ComponentFixture<TablePaisComponent>;
+describe('TablaDetalleComponent', () => {
+  let component: TablaDetalleComponent;
+  let fixture: ComponentFixture<TablaDetalleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TablePaisComponent ]
+      declarations: [ TablaDetalleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TablePaisComponent);
+    fixture = TestBed.createComponent(TablaDetalleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
