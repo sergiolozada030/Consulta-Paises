@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PorCapitalComponent } from './pais/pages/por-capital/por-capital.component';
 /* Componentes */
 import { PorPaisComponent } from './pais/pages/por-pais/por-pais.component';
 import { PorRegionComponent } from './pais/pages/por-region/por-region.component';
@@ -17,10 +18,15 @@ const routes: Routes = [
   },
   {
     path: 'capital',
-    component: PorRegionComponent,
+    component: PorCapitalComponent,
   },
+
   {
     path: 'pais/:id',
+    component: VerPaisComponent,
+  },
+  {
+    path: 'capital/pais/:id',
     component: VerPaisComponent,
   },
   { path: '**', redirectTo: '' },

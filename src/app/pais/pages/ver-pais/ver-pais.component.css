@@ -1,0 +1,58 @@
+.card-personalizada {
+  border: 1px solid #adb5bd;
+  border-radius: 6px;
+  width: auto;
+  height: auto;
+  background-color: #ffffff;
+  padding: 24px;
+}
+
+.card-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.titulo {
+  flex: 1;
+}
+
+.imagenes {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imagenes .logo-bandera {
+  width: 170px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.imagenes .logo-escudo {
+  width: 100px;
+  height: 100px;
+}
+
+.descripcion ul {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.descripcion span {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .card-encabezado {
+    display: block;
+  }
+  .imagenes {
+    display: block;
+  }
+  .imagenes .logo-bandera {
+    margin-bottom: 20px;
+  }
+}

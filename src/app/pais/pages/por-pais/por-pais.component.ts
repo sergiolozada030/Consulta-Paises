@@ -12,6 +12,7 @@ export class PorPaisComponent implements OnInit {
   mostrarError: boolean;
   msjError: string;
   paises: Country[] = [];
+  placeholder = 'Ingrese el país';
 
   constructor(private paisService: PaisService) {}
 
@@ -20,7 +21,6 @@ export class PorPaisComponent implements OnInit {
   buscar(termino: string) {
     this.mostrarError = false;
     this.termino = termino;
-    console.log(termino);
     this.paisService.buscarPais(this.termino).subscribe(
       (resp) => {
         this.paises = resp;
@@ -32,5 +32,11 @@ export class PorPaisComponent implements OnInit {
         this.msjError = 'No se encontraron resultados para ' + this.termino;
       }
     );
+  }
+
+  sugerencias(termino: string) {
+    console.log(termino);
+    this.mostrarError = false;
+    // Crear Sugerencias
   }
 }

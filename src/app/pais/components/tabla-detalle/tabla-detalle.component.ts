@@ -11,5 +11,7 @@ export class TablaDetalleComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.paises);
+  }
 }
