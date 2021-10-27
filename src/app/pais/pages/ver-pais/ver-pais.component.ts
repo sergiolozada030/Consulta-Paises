@@ -21,7 +21,6 @@ export class VerPaisComponent implements OnInit {
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.paisService.buscarPaisPorCodigo(id)))
       .subscribe((pais) => {
-        console.log(pais);
         this.pais = pais[0];
         this.pais.continents[0];
       });

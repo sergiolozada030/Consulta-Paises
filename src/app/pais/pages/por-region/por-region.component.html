@@ -1,1 +1,30 @@
-<p>por-region works!</p>
+<h3>Region Seleccionada : {{ regionActiva | titlecase }}</h3>
+<hr />
+
+<h5>selecione una región</h5>
+
+<div class="row">
+  <div class="col">
+    <button
+      *ngFor="let region of regiones"
+      type="button"
+      [class]="getClaseCss(region)"
+      (click)="activarRegion(region)"
+    >
+      {{ region | titlecase }}
+    </button>
+  </div>
+</div>
+
+<!-- Maneras de hacer validaciones en la propiedad class html -->
+
+<!-- [ngClass]="{
+        'btn-dark': regionActiva === region,
+        'btn-outline-primary': regionActiva !== region
+      }" -->
+
+<div *ngIf="paises.length > 0" class="row">
+  <div class="col">
+    <app-tabla-detalle [paises]="paises"></app-tabla-detalle>
+  </div>
+</div>

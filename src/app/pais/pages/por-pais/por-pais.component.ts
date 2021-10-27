@@ -26,7 +26,6 @@ export class PorPaisComponent implements OnInit {
         this.paises = resp;
       },
       (error) => {
-        console.log(error);
         this.mostrarError = true;
         this.paises = [];
         this.msjError = 'No se encontraron resultados para ' + this.termino;
@@ -35,7 +34,6 @@ export class PorPaisComponent implements OnInit {
   }
 
   sugerencias(termino: string) {
-    console.log(termino);
     this.mostrarError = false;
     // Crear Sugerencias
   }

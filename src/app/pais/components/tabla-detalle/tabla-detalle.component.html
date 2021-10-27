@@ -4,6 +4,7 @@
       <th>#</th>
       <th>Bandera</th>
       <th>Nombre</th>
+      <th>Capital</th>
       <th>Población</th>
       <th>Ver mas...</th>
     </tr>
@@ -15,6 +16,7 @@
         <img class="small-flag" [src]="pais.flags.png" alt="bandera" />
       </td>
       <td>{{ pais.name.common }}</td>
+      <td>{{ pais.capital[0] }}</td>
       <td>{{ pais.population | number }}</td>
       <td>
         <a [routerLink]="['pais/', pais.cca2]">Ver más..</a>

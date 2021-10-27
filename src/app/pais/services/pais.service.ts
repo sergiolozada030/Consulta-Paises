@@ -12,18 +12,23 @@ export class PaisService {
 
   constructor(private http: HttpClient) {}
 
-  buscarPais(termino: string) {
-    const url = `${this.apiUrl}/name/${termino}`;
+  buscarPais(pais: string) {
+    const url = `${this.apiUrl}/name/${pais}`;
     return this.http.get<Country[]>(url);
   }
 
-  buscarCapital(termino: string) {
-    const url = `${this.apiUrl}/capital/${termino}`;
+  buscarCapital(capital: string) {
+    const url = `${this.apiUrl}/capital/${capital}`;
     return this.http.get<Country[]>(url);
   }
 
-  buscarPaisPorCodigo(termino: string) {
-    const url = `${this.apiUrl}/alpha/${termino}`;
+  buscarPaisPorCodigo(codigo: string) {
+    const url = `${this.apiUrl}/alpha/${codigo}`;
+    return this.http.get<Country[]>(url);
+  }
+
+  buscarPaisPorRegion(region: string) {
+    const url = `${this.apiUrl}/region/${region}`;
     return this.http.get<Country[]>(url);
   }
 }

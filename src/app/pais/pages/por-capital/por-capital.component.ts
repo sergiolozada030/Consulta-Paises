@@ -20,7 +20,7 @@ export class PorCapitalComponent implements OnInit {
 
   buscar(termino: string) {
     this.mostrarError = false;
-    console.log('Capital', termino);
+
     this.paisService.buscarCapital(termino).subscribe(
       (resp) => {
         this.paises = resp;
