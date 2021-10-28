@@ -1,4 +1,12 @@
-<h2>Detalle del país</h2>
+<div class="header-detalle">
+  <h2>Detalle del país</h2>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    [routerLink]="['pais/']"
+  ></button>
+</div>
 <hr />
 
 <div *ngIf="!pais; else cardPais" class="alert alert-info">
@@ -6,7 +14,7 @@
 </div>
 
 <ng-template #cardPais>
-  <div class="card-personalizada">
+  <div class="card-personalizada animate__animated animate__fadeIn">
     <div class="card-encabezado">
       <div class="titulo">
         <h2>{{ pais.name.common }}</h2>

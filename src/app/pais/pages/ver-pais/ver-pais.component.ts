@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { PaisService } from '../../services/pais.service';
 import { Country } from '../../services/paises.interfaces';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-ver-pais',
   templateUrl: './ver-pais.component.html',
@@ -14,7 +14,8 @@ export class VerPaisComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private paisService: PaisService
+    private paisService: PaisService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -34,5 +35,9 @@ export class VerPaisComponent implements OnInit {
       });
     });
     */
+  }
+
+  goToback() {
+    this.location.back();
   }
 }

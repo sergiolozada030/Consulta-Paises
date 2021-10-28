@@ -1,13 +1,15 @@
-<h2>Por país</h2>
-<hr />
+<div class="card-personalizada animate__animated animate__fadeIn">
+  <h2>Por país</h2>
+  <hr />
 
-<div class="row">
-  <div class="col">
-    <app-input-busqueda
-      (onEnter)="buscar($event)"
-      (onDebounce)="sugerencias($event)"
-      [placeholder]="placeholder"
-    ></app-input-busqueda>
+  <div class="row">
+    <div class="col">
+      <app-input-busqueda
+        (onEnter)="buscar($event)"
+        (onDebounce)="sugerencias($event)"
+        [placeholder]="placeholder"
+      ></app-input-busqueda>
+    </div>
   </div>
 </div>
 

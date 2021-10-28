@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,14 +12,18 @@ export class PaisService {
 
   constructor(private http: HttpClient) {}
 
+  get getHttpParams() {
+    return new HttpParams().set('fields', 'flags,name,capital,population,cca2');
+  }
+
   buscarPais(pais: string) {
     const url = `${this.apiUrl}/name/${pais}`;
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, { params: this.getHttpParams });
   }
 
   buscarCapital(capital: string) {
     const url = `${this.apiUrl}/capital/${capital}`;
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, { params: this.getHttpParams });
   }
 
   buscarPaisPorCodigo(codigo: string) {
@@ -29,6 +33,6 @@ export class PaisService {
 
   buscarPaisPorRegion(region: string) {
     const url = `${this.apiUrl}/region/${region}`;
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, { params: this.getHttpParams });
   }
 }

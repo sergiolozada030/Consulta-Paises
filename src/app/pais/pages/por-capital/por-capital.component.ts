@@ -19,8 +19,10 @@ export class PorCapitalComponent implements OnInit {
   ngOnInit(): void {}
 
   buscar(termino: string) {
+    if (!termino) {
+      return;
+    }
     this.mostrarError = false;
-
     this.paisService.buscarCapital(termino).subscribe(
       (resp) => {
         this.paises = resp;

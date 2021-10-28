@@ -1,18 +1,20 @@
-<h3>Region Seleccionada : {{ regionActiva | titlecase }}</h3>
-<hr />
+<div class="card-personalizada animate__animated animate__fadeIn">
+  <h2>Region Seleccionada : {{ regionActiva | titlecase }}</h2>
+  <hr />
 
-<h5>selecione una región</h5>
+  <h5>selecione una región</h5>
 
-<div class="row">
-  <div class="col">
-    <button
-      *ngFor="let region of regiones"
-      type="button"
-      [class]="getClaseCss(region)"
-      (click)="activarRegion(region)"
-    >
-      {{ region | titlecase }}
-    </button>
+  <div class="row">
+    <div class="col">
+      <button
+        *ngFor="let region of regiones"
+        type="button"
+        [class]="getClaseCss(region)"
+        (click)="activarRegion(region)"
+      >
+        {{ region | titlecase }}
+      </button>
+    </div>
   </div>
 </div>
 
