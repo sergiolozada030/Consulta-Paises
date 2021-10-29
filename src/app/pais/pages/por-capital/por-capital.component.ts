@@ -35,7 +35,5 @@ export class PorCapitalComponent implements OnInit {
     );
   }
 
-  sugerencias(termino: string) {
-    console.log(termino);
-  }
+  sugerencias(termino: string) {}
 }

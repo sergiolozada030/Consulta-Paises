@@ -11,8 +11,10 @@ export class PorPaisComponent implements OnInit {
   termino: string;
   mostrarError: boolean;
   msjError: string;
-  paises: Country[] = [];
+  paises: Country[];
   placeholder = 'Ingrese el país';
+  paisesSugeridos: Country[] = [];
+  mostrarSugerencias: boolean;
 
   constructor(private paisService: PaisService) {}
 
@@ -22,6 +24,7 @@ export class PorPaisComponent implements OnInit {
     if (!termino) {
       return;
     }
+    this.mostrarSugerencias = false;
     this.mostrarError = false;
     this.termino = termino;
     this.paisService.buscarPais(this.termino).subscribe(
@@ -31,13 +34,24 @@ export class PorPaisComponent implements OnInit {
       (error) => {
         this.mostrarError = true;
         this.paises = [];
-        this.msjError = 'No se encontraron resultados para ' + this.termino;
+        this.msjError = 'No se encontraron resultados para: ' + this.termino;
       }
     );
   }
 
   sugerencias(termino: string) {
     this.mostrarError = false;
+    this.mostrarSugerencias = true;
+    this.termino = termino;
     // Crear Sugerencias
+    this.paisService.buscarPais(termino).subscribe(
+      (paises) => {
+        this.paisesSugeridos = paises.splice(0, 4);
+      },
+      (error) => {
+        this.paisesSugeridos = [];
+        this.mostrarSugerencias = false;
+      }
+    );
   }
 }
